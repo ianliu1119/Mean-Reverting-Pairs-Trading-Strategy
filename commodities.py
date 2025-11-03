@@ -2,12 +2,10 @@ import pandas as pd
 import numpy as np
 from stationarity_test import johansen_test
 
-commodities_table = pd.read_csv("commodities.csv")
-
-commodities_tbl = commodities_table
+commodities_tbl = pd.read_csv("commodities.csv")
 commodities_list = commodities_tbl["Ticker_Symbol"].tolist()
 
-test_ticker_list = ['SLV', 'GLD', 'USO', 'NVDA', 'WFC']
+test_ticker_list = ["SLV", "GLD", "USO", "NVDA", "WFC"]
 start_date = "2023-10-01"
 end_date = "2024-10-01"
 
@@ -33,6 +31,7 @@ def commodities_combination(ticker_list):
 
     return table
 
+
 final = commodities_combination(commodities_list)
-final_sorted = final.sort_values(by = "Test Stat", ascending = False)
+final_sorted = final.sort_values(by="Test Stat", ascending=False)
 print(final_sorted)
